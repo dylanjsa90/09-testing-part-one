@@ -2,7 +2,7 @@
     will allow you to become familiar with testing concepts.
     We test to check the I/O of our apps. That is - we are not
     checking for HOW something works, but the end RESULT and
-    state of a particular place in our application.
+    state of a particular place in our applic   ation.
 */
 
 
@@ -46,17 +46,21 @@ var favoriteAnimals = ['elephants', 'penguins', 'eagles', 'camels'];
 var nextAnimal;
 
   /* TODO:
-      Assign one of your favorite animals dynamically by chance to the 
+      Assign one of your favorite animals dynamically by chance to the
       nextAnimal variable   :-)
       Your code begins on the next line: */
+nextAnimal = favoriteAnimals[getRandomIntInclusive(0, 3)];
 
+
+function getRandomIntInclusive(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
   /* TODO:
+
       Write a test! Use the `expect()` function we defined earlier to ensure
       that an element in the favoriteAnimals array was assigned to nextAnimal.
-      No hard-coded results allowed! (ex: seeing if nextAnimal is equal to 
+      No hard-coded results allowed! (ex: seeing if nextAnimal is equal to
       just 'penguin').
       Remember to: pass in your expression, and write a failure and a success
       message. Your test begins on the next line: */
-
-
-
+expect(favoriteAnimals.includes(nextAnimal) === true, 'next animal should be included in favorite animals but currently is ' + nextAnimal, 'The next animal ' + nextAnimal + ' is a favorite animal!');
